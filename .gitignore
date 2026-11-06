@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.local
+*.secret
+secrets/
+
+# Private keys, certificates, and credential files
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_ed25519
+credentials.json
+service-account*.json
+
+# Logs and temporary files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# Local databases and backups
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+*.backup
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and local workspace state
+.idea/
+.vscode/
