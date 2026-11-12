@@ -4,6 +4,7 @@ import {
   ArrowRight,
   Check,
   ChevronRight,
+  Facebook,
   Instagram,
   Mail,
   MapPin,
@@ -17,10 +18,13 @@ import { serviceOptions, services } from './services'
 const CONTACT = {
   phone: '+244 931 515 960',
   phoneLink: '+244931515960',
+  alternatePhone: '+244 222 734 626',
+  alternatePhoneLink: '+244222734626',
   whatsapp: '244931515960',
   email: 'comercial@siopper.ao',
   address: 'Avenida 21 de Janeiro',
-  instagram: '_Siopper_Seguranca',
+  instagram: 'siopper.ao',
+  facebook: 'https://www.facebook.com/siopper.ao',
 }
 
 const navItems = [
@@ -59,6 +63,7 @@ function Logo({ light = false, homeHref = '#inicio' }: { light?: boolean; homeHr
       aria-label="SIOPPER — início"
     >
       <img className="brand__image" src="/images/siopper-logo.jpg" alt="Logótipo SIOPPER" />
+      <span className="brand__name">SIOPPER</span>
     </a>
   )
 }
@@ -178,9 +183,10 @@ function HomePage() {
         Saltar para o conteúdo
       </a>
 
+      {/* Barra superior com telefone e mensagem institucional */}
       <div className="topline">
         <div className="container topline__inner">
-          <span>Protegendo o que é mais importante para você.</span>
+          <span>confiança que protege.</span>
           <a href={`tel:${CONTACT.phoneLink}`}>
             <Phone size={14} aria-hidden="true" />
             {CONTACT.phone}
@@ -188,6 +194,7 @@ function HomePage() {
         </div>
       </div>
 
+      {/* Cabeçalho e navegação principal */}
       <header className="site-header">
         <div className="container site-header__inner">
           <Logo light />
@@ -223,6 +230,7 @@ function HomePage() {
       </header>
 
       <main id="conteudo">
+        {/* Secção inicial: apresentação principal e chamadas para acção */}
         <section className="hero" id="inicio" aria-labelledby="hero-title">
           <div className="hero__image" role="img" aria-label="Agentes de segurança da SIOPPER em serviço" />
           <div className="hero__shade" />
@@ -233,7 +241,7 @@ function HomePage() {
                 SIOPPER · SEGURANÇA
               </p>
               <h1 id="hero-title">
-                SEGURANÇA E PROTECÇÃO PARA AQUILO QUE <em>MAIS IMPORTA.</em>
+                CONFIANÇA <em>QUE PROTEGE.</em>
               </h1>
               <p className="hero__intro">
                 Oferecemos soluções profissionais de segurança humana e protecção
@@ -259,6 +267,7 @@ function HomePage() {
           <span className="hero__index" aria-hidden="true">01 / 04</span>
         </section>
 
+        {/* Secção Sobre nós: apresentação, missão, visão e valores */}
         <section className="about section-pad" id="sobre">
           <div className="container about__layout">
             <div className="about__visual" data-reveal>
@@ -308,13 +317,14 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Secção de serviços oferecidos */}
         <section className="services section-pad" id="servicos">
           <div className="container">
             <div className="services__heading" data-reveal>
               <SectionHeading
                 eyebrow="O que fazemos"
-                title="Soluções para proteger o que importa."
-                description="Serviços de segurança pensados para responder às necessidades de empresas, instituições e particulares."
+                title="Serviços de segurança"
+                description=" pensados para responder às necessidades de empresas, instituições e particulares."
                 light
               />
               <a className="button button--outline-light services__all" href="#orcamento">
@@ -344,6 +354,7 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Secção sobre a equipa e os profissionais de segurança */}
         <section className="people section-pad">
           <div className="container people__layout">
             <div className="people__content" data-reveal>
@@ -374,6 +385,7 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Secção de diferenciais e motivos para escolher a SIOPPER */}
         <section className="reasons section-pad" id="diferenciais">
           <div className="container reasons__layout">
             <div className="reasons__intro" data-reveal>
@@ -406,6 +418,7 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Secção de pedido de orçamento com formulário para WhatsApp */}
         <section className="quote section-pad" id="orcamento">
           <div className="container quote__layout">
             <div className="quote__intro" data-reveal>
@@ -481,6 +494,7 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Secção com os canais de contacto */}
         <section className="contact-strip" id="contactos">
           <div className="container contact-strip__layout">
             <div className="contact-strip__intro" data-reveal>
@@ -494,6 +508,11 @@ function HomePage() {
                 <span><small>Telefone</small><b>{CONTACT.phone}</b></span>
                 <ChevronRight size={16} />
               </a>
+              <a className="contact-item" href={`tel:${CONTACT.alternatePhoneLink}`}>
+                <Phone size={19} />
+                <span><small>Telefone</small><b>{CONTACT.alternatePhone}</b></span>
+                <ChevronRight size={16} />
+              </a>
               <a className="contact-item" href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noreferrer">
                 <MessageIcon />
                 <span><small>WhatsApp</small><b>Enviar mensagem</b></span>
@@ -504,14 +523,20 @@ function HomePage() {
                 <span><small>E-mail</small><b>{CONTACT.email}</b></span>
                 <ChevronRight size={16} />
               </a>
+
+              <a className="contact-item" href={`https://www.instagram.com/${CONTACT.instagram}/`} target="_blank" rel="noreferrer">
+                <Instagram size={19} />
+                <span><small>Instagram</small><b>@{CONTACT.instagram}</b></span>
+                <ChevronRight size={16} />
+              </a>
+              <a className="contact-item" href={CONTACT.facebook} target="_blank" rel="noreferrer">
+                <Facebook size={19} />
+                <span><small>Facebook</small><b>Siopper</b></span>
+                <ChevronRight size={16} />
+              </a>
               <a className="contact-item" href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT.address)}`} target="_blank" rel="noreferrer">
                 <MapPin size={19} />
                 <span><small>Endereço</small><b>{CONTACT.address}</b></span>
-                <ChevronRight size={16} />
-              </a>
-              <a className="contact-item" href={`https://www.instagram.com/${CONTACT.instagram}/`} target="_blank" rel="noreferrer">
-                <Instagram size={19} />
-                <span><small>Instagram</small><b>@_Siopper_Segurança</b></span>
                 <ChevronRight size={16} />
               </a>
             </div>
@@ -519,12 +544,13 @@ function HomePage() {
         </section>
       </main>
 
+      {/* Rodapé com navegação, serviços e contactos */}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-main">
             <div className="footer-brand">
               <Logo light />
-              <p>Protegendo o que é mais importante para você.</p>
+              <p>CONFIANÇA QUE PROTEGE.</p>
             </div>
             <div className="footer-column">
               <h3>Navegação</h3>
@@ -538,9 +564,11 @@ function HomePage() {
             <div className="footer-column footer-column--contact">
               <h3>Contactos</h3>
               <a href={`tel:${CONTACT.phoneLink}`}>{CONTACT.phone}</a>
+              <a href={`tel:${CONTACT.alternatePhoneLink}`}>{CONTACT.alternatePhone}</a>
               <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
               <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a>
               <a href={`https://www.instagram.com/${CONTACT.instagram}/`} target="_blank" rel="noreferrer">Instagram</a>
+              <a href={CONTACT.facebook} target="_blank" rel="noreferrer">Facebook</a>
             </div>
           </div>
           <div className="footer-bottom">
@@ -550,6 +578,7 @@ function HomePage() {
         </div>
       </footer>
 
+      {/* Atalho flutuante para iniciar uma conversa no WhatsApp */}
       <a
         className="whatsapp-float"
         href={`https://wa.me/${CONTACT.whatsapp}`}
